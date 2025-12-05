@@ -18,7 +18,7 @@ with st.sidebar:
 # --- 入力エリア ---
 col1, col2 = st.columns(2)
 with col1:
-    store_name = st.text_input("店舗名", value="例：ユニクロ 同志社前店")
+    store_name = st.text_input("店舗名", value="例：〇〇屋")
     tone = st.selectbox("返信トーン", ["丁寧・フォーマル", "親しみやすい", "簡潔・ビジネス"])
 
 with col2:

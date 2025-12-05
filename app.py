@@ -10,10 +10,16 @@ st.markdown("丁寧さとMEO対策を兼ね備えた返信を生成します。"
 # --- サイドバー設定 ---
 with st.sidebar:
     st.header("設定")
-    # 実際の運用では環境変数で管理すべきだが、テスト用にここで入力
-    api_key = st.text_input("Gemini API Key", type="password")
+    
+    # Secretsから安全にキーを読み込む
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    except FileNotFoundError:
+        st.error("APIキーが設定されていません。")
+        api_key = None
+
     st.markdown("---")
-    st.write("※APIキーは他人に教えないでください。")
+    st.write("開発者が利用料を負担していますので、無料で使い放題です。")
 
 # --- 入力エリア ---
 col1, col2 = st.columns(2)

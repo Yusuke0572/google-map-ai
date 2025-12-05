@@ -42,8 +42,7 @@ if st.button("返信を生成する", type="primary"):
         try:
             # Geminiの設定
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-pro')
-            # プロンプト設計（ここが品質の肝）
+            model = genai.GenerativeModel('gemini-1.5-flash')            # プロンプト設計（ここが品質の肝）
             system_instruction = """
             あなたは「熟練の店舗マネージャー」兼「MEOマーケティング専門家」です。
             以下のルールでGoogleマップの口コミ返信を作成してください：
